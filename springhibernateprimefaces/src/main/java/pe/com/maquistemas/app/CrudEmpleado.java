@@ -11,8 +11,8 @@ import pe.com.maquistemas.app.service.EmpleadoService;
 
 /**
  * 
- *  @author Ing. Ronald Angulo
- * 
+ * @author John
+ *
  */
 @Component
 public class CrudEmpleado {

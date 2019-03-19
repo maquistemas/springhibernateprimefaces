@@ -11,11 +11,6 @@ import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
-/**
- * 
- * @author Ing. Ronald Angulo
- * 
- */
 @Entity
 @Table(name = "empleado")
 
@@ -32,10 +27,7 @@ import javax.persistence.Table;
 		@NamedNativeQuery(name = "empleado.nativeBuscarPorId", query = "select id, nombres, apellidos, cargo, salario from empleado e where e.id = :pId") })
 
 public class Empleado implements java.io.Serializable {
-
-	/**
-	 * 
-	 */
+	
 	private static final long serialVersionUID = -2156709172557536871L;
 
 	@Id

@@ -7,7 +7,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import pe.com.maquistemas.app.model.Empleado;
+import pe.com.maquistemas.app.model.TipoMaterial;
 import pe.com.maquistemas.app.service.EmpleadoService;
+import pe.com.maquistemas.app.service.TipoMaterialService;
 
 /**
  * 
@@ -22,6 +24,20 @@ public class CrudEmpleado {
 	@Autowired
 	private EmpleadoService empService;
 	
+	@Autowired
+	TipoMaterialService tipoMaterialService;
+	
+	public void crear(TipoMaterial tipoMaterial) {
+		logger.info("crear: ");
+		tipoMaterialService.guardar(tipoMaterial);
+		logger.info("creado: ");
+	}
+	
+	public  void listarTipoMaterial() {
+		tipoMaterialService.listar().stream().forEach(x->{
+			x.getDescripcion();
+		});
+	}
 	
 	
 	
@@ -51,7 +67,7 @@ public class CrudEmpleado {
 		logger.info("Nuevo Empleado:");
 		Empleado empleado = new Empleado();
 		empleado.setApellidos("Verastegui");
-		empleado.setNombres("Sonia");
+		empleado.setNombres("raul");
 		empleado.setCargo("Moza");
 		empleado.setSalario(1500);
 		

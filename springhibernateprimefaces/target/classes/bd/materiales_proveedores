@@ -1,0 +1,28 @@
+create table tipo_materiales(
+id Int primary key auto_increment,
+descripcion varchar(200)
+);
+
+create table materiales(
+id Int primary key auto_increment,
+descripcion varchar(200),
+idtipomaterial Integer
+);
+
+create table proveedores(
+id Int primary key auto_increment,
+descripcion varchar(200)
+);
+
+create table materiales_proveedores(
+id Int primary key auto_increment,
+idmaterial Int,
+idproveedor Int,
+descripcion varchar(200),
+precio decimal(10,2)
+);
+
+/*referencias*/
+alter table materiales add foreign key(idtipomaterial) references tipo_materiales(id);
+alter table materiales_proveedores add foreign key(idmaterial) references materiales(id);
+alter table materiales_proveedores add foreign key(idproveedor) references proveedores(id);

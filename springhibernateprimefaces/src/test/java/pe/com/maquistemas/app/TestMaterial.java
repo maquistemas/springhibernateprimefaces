@@ -20,14 +20,14 @@ public class TestMaterial {
 			
 			Material m = new Material();
 			m.setId(0);
-			m.setDescripcion("Acero galvanizado 3 1/2");
+			m.setDescripcion("Acero galvanizado 6 1/2");
 			
 			TipoMaterial tm = new TipoMaterial();
 			tm.setId(1);
 			m.setTipoMaterial(tm);
 			crud.crear(m);
 			
-			crud.listar();
+			//crud.listar();
 			
 			
 			
@@ -47,12 +47,12 @@ class CrudMaterial{
 	final static Logger logger = Logger.getLogger(CrudMaterial.class);
 	
 	public void crear(Material material) {
-		materialService.guardar(material);
+		materialService.save(material);
 		logger.info("creado");
 	}
 	
 	public void listar() {
-		materialService.listar().stream().forEach(x->{
+		materialService.findAll().stream().forEach(x->{
 			System.out.println(x);
 		});
 	}

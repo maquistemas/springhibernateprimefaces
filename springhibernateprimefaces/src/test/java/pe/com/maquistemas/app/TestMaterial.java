@@ -13,7 +13,7 @@ import pe.com.maquistemas.app.service.MaterialService;
 public class TestMaterial {
 	
 	public static void main(String[] args) {
-		//test
+		//test2
 		AnnotationConfigApplicationContext context = null;
 		try {
 			context = new AnnotationConfigApplicationContext(SpringCoreConfig.class);
